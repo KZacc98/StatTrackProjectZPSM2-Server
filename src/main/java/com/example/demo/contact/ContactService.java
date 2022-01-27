@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ContactService {
@@ -21,5 +22,13 @@ public class ContactService {
 
         return contactRepository.findAll();
 
+    }
+
+    public void addNewContact(Contact contact) {
+        Optional<Contact> contactOptional = contactRepository.findContactByEmail(contact.getEmail());
+        if(contactOptional.isPresent()){
+            throw new IllegalStateException("Email taken");
+        }
+        contactRepository.save(contact);
     }
 }
