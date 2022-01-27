@@ -3,7 +3,6 @@ package com.example.demo.contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -35,6 +34,12 @@ public class ContactController {
     @DeleteMapping(path="{contactId}")
     public void deleteContact(@PathVariable("contactId") Long contactId){
         contactService.deleteContact(contactId);
+    }
+    @PutMapping(path = "{contactId}")
+    public void updateContact(@PathVariable("contactId") Long contactId,
+                              @RequestParam(required = false) String name,
+                              @RequestParam(required = false) String email){
+        contactService.updateContact(contactId,name,email);
     }
 
 
