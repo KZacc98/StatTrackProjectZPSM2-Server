@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,7 +30,7 @@ public class ContactConfig {
                     "ellie@wp.pl",
                     "https://static.wikia.nocookie.net/euphoria-hbo/images/7/7d/Euphoria_S2_Elliot.jpg/revision/latest?cb=20211225055956.jpg");
             repository.saveAll(
-                    List.of(maddy, jules)
+                    List.of(maddy,jules,cassie,elliot)
             );
         };
     }
