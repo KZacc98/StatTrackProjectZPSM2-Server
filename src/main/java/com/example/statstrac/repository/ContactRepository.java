@@ -1,5 +1,6 @@
-package com.example.demo.contact;
+package com.example.statstrac.repository;
 
+import com.example.statstrac.model.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,10 +1,11 @@
-package com.example.demo.contact;
+package com.example.statstrac.contact;
 
+import com.example.statstrac.model.Contact;
+import com.example.statstrac.repository.ContactRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

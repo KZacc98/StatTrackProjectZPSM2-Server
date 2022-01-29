@@ -1,6 +1,8 @@
-package com.example.demo.contact;
+package com.example.statstrac.service;
 
 
+import com.example.statstrac.model.Contact;
+import com.example.statstrac.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

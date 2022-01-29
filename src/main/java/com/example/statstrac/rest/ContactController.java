@@ -1,5 +1,7 @@
-package com.example.demo.contact;
+package com.example.statstrac.rest;
 
+import com.example.statstrac.model.Contact;
+import com.example.statstrac.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.example.demo.contact;
+package com.example.statstrac.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
