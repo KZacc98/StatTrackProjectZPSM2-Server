@@ -20,9 +20,11 @@ public class SubjectConfig {
                     "Przedmiot 2");
             Subject subject3 = new Subject(
                     "Przedmiot 3");
+            Subject subject4 = new Subject(
+                    "Przedmiot 4");
 
             repository.saveAll(
-                    List.of(subject1, subject2, subject3)
+                    List.of(subject1, subject2, subject3, subject4)
             );
 
         };
