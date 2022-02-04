@@ -1,4 +1,4 @@
-package com.example.statstrac.contact;
+package com.example.statstrac.config;
 
 import com.example.statstrac.model.Contact;
 import com.example.statstrac.repository.ContactRepository;
@@ -31,7 +31,7 @@ public class ContactConfig {
                     "ellie@wp.pl",
                     "https://static.wikia.nocookie.net/euphoria-hbo/images/7/7d/Euphoria_S2_Elliot.jpg/revision/latest?cb=20211225055956.jpg");
             repository.saveAll(
-                    List.of(maddy,jules,cassie,elliot)
+                    List.of(maddy, jules, cassie, elliot)
             );
         };
     }
