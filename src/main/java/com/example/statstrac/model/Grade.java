@@ -1,5 +1,7 @@
 package com.example.statstrac.model;
 
+import com.example.statstrac.dto.GradeEntryDto;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,18 +17,13 @@ import javax.persistence.*;
 @Table(name="Grade")
 public class Grade {
     @Id
-    @SequenceGenerator(
-            name = "grade_sequence",
-            sequenceName = "grade_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "grade_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long gradeId;
     private Double gradeValue;
     private String note;
-
+    @ManyToOne
+    @JoinColumn(name = "subject_id")
+    @JsonIgnore
+    private Subject subject;
 
 }

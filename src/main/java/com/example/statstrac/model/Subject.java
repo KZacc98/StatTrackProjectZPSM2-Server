@@ -17,26 +17,11 @@ import java.util.List;
 public class Subject {
 
     @Id
-    @SequenceGenerator(
-            name = "subject_sequence",
-            sequenceName = "subject_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "subject_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long subjectId;
     private String title;
-
-    @OneToMany(
-            cascade = CascadeType.ALL
-    )
-    @JoinColumn(
-            name = "subject_id",
-            referencedColumnName = "subjectId"
-    )
-    private List<Grade> gradeList=new ArrayList<>();
+//    @OneToMany(mappedBy = "subject")
+//    private List<Grade> gradeList=new ArrayList<>();
 
 
 

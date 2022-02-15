@@ -1,6 +1,7 @@
 package com.example.statstrac.rest;
 
 
+import com.example.statstrac.dto.GradeEntryDto;
 import com.example.statstrac.model.Contact;
 import com.example.statstrac.model.Grade;
 import com.example.statstrac.service.GradeService;
@@ -19,8 +20,8 @@ public class GradeController {
     }
 
     @PostMapping
-    public void addNewGrade(@RequestBody Grade grade){
-        gradeService.addGrade(grade);
+    public void addNewGrade(@RequestBody GradeEntryDto gradeEntryDto){
+        gradeService.addGrade(gradeEntryDto);
     }
 
     @GetMapping
