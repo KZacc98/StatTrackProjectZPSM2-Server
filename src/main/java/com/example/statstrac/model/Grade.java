@@ -1,6 +1,5 @@
 package com.example.statstrac.model;
 
-import com.example.statstrac.dto.GradeEntryDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
@@ -21,9 +20,6 @@ public class Grade {
     private Long gradeId;
     private Double gradeValue;
     private String note;
-    @ManyToOne
-    @JoinColumn(name = "subject_id")
-    @JsonIgnore
-    private Subject subject;
+    private Long subjectId;
 
 }

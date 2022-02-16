@@ -2,7 +2,6 @@ package com.example.statstrac.rest;
 
 
 import com.example.statstrac.dto.GradeEntryDto;
-import com.example.statstrac.model.Contact;
 import com.example.statstrac.model.Grade;
 import com.example.statstrac.service.GradeService;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +19,17 @@ public class GradeController {
     }
 
     @PostMapping
-    public void addNewGrade(@RequestBody GradeEntryDto gradeEntryDto){
-        gradeService.addGrade(gradeEntryDto);
+    public void addNewGrade(@RequestBody GradeEntryDto gradeDto){
+        gradeService.addGrade(gradeDto);
     }
 
     @GetMapping
     public List<Grade> getGrades(){
         return gradeService.getGrades();
+    }
+
+    @GetMapping(path = "{subjectId}")
+    public List<Grade> getGradesBySubjectId(@PathVariable Long subjectId){
+        return gradeService.getGradesBySubjectId(subjectId);
     }
 }

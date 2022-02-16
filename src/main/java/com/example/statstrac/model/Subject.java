@@ -20,10 +20,8 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long subjectId;
     private String title;
-//    @OneToMany(mappedBy = "subject")
-//    private List<Grade> gradeList=new ArrayList<>();
-
-
+    @OneToMany(mappedBy = "subjectId")
+    private List<Grade> gradeList = new ArrayList<>();
 
 
     public Subject(String title) {

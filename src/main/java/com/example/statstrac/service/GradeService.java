@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class GradeService {
@@ -26,13 +25,16 @@ public class GradeService {
         return gradeRepository.findAll();
     }
 
+    public List<Grade> getGradesBySubjectId(Long subjectId){
+        return gradeRepository.findGradeBySubjectId(subjectId);
+    }
 
     public void addGrade(GradeEntryDto grade){
         Grade gradeToSave=new Grade();
         Subject subject= subjectRepository.findById(grade.getSubjectId()).orElse(null);
         gradeToSave.setGradeValue(grade.getGradeValue());
         gradeToSave.setNote(grade.getNote());
-        gradeToSave.setSubject(subject);
+        gradeToSave.setSubjectId(subject.getSubjectId());
         gradeRepository.save(gradeToSave);
     }
 
