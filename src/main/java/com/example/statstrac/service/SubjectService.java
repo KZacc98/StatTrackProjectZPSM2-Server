@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SubjectService {
@@ -19,6 +20,9 @@ public class SubjectService {
 
     public List<Subject> getSubjects(){
         return subjectRepository.findAll();
+    }
+    public void addNewSubject(Subject subject){
+        subjectRepository.save(subject);
     }
 
 
