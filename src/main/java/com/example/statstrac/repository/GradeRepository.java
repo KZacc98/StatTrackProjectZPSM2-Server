@@ -1,13 +1,10 @@
 package com.example.statstrac.repository;
 
-import com.example.statstrac.model.Contact;
 import com.example.statstrac.model.Grade;
-import com.example.statstrac.model.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface GradeRepository extends JpaRepository<Grade,Long> {
