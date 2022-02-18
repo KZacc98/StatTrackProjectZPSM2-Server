@@ -18,7 +18,7 @@ public class GradeController {
         this.gradeService = gradeService;
     }
 
-    @PostMapping
+    @PutMapping
     public void addNewGrade(@RequestBody GradeEntryDto gradeDto){
         gradeService.addGrade(gradeDto);
     }

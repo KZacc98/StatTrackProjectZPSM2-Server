@@ -17,7 +17,15 @@ import java.util.List;
 public class Subject {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(
+            name = "subject_sequence",
+            sequenceName = "subject_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "subject_sequence"
+    )
     private Long subjectId;
     private String title;
     @OneToMany(mappedBy = "subjectId")
