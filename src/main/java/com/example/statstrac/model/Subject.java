@@ -3,6 +3,8 @@ package com.example.statstrac.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -11,7 +13,7 @@ import javax.persistence.*;
 @ToString
 
 @Entity
-@Table
+@Table(name = "Subject")
 public class Subject {
 
     @Id
@@ -24,8 +26,11 @@ public class Subject {
             strategy = GenerationType.SEQUENCE,
             generator = "subject_sequence"
     )
-    private Long id;
+    private Long subjectId;
     private String title;
+    @OneToMany(mappedBy = "subjectId")
+    private List<Grade> gradeList = new ArrayList<>();
+
 
     public Subject(String title) {
         this.title = title;

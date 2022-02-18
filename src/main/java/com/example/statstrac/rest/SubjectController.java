@@ -2,9 +2,7 @@ package com.example.statstrac.rest;
 
 import com.example.statstrac.model.Subject;
 import com.example.statstrac.service.SubjectService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class SubjectController {
     @GetMapping
     public List<Subject> getSubjects(){
         return subjectService.getSubjects();
+    }
+
+    @PostMapping(path = "/add")
+    public void addSubject(@RequestBody Subject subject){
+        subjectService.addNewSubject(subject);
     }
 }
