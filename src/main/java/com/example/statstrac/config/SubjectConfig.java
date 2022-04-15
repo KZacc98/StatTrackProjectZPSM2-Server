@@ -15,13 +15,13 @@ public class SubjectConfig {
     CommandLineRunner commandLineRunner2(SubjectRepository repository) {
         return args -> {
             Subject subject1 = new Subject(
-                    "Przedmiot 1");
+                    "Matematyka");
             Subject subject2 = new Subject(
-                    "Przedmiot 2");
+                    "Historia");
             Subject subject3 = new Subject(
-                    "Przedmiot 3");
+                    "Fizyka");
             Subject subject4 = new Subject(
-                    "Przedmiot 4");
+                    "Chemia");
 
             repository.saveAll(
                     List.of(subject1, subject2, subject3, subject4)
