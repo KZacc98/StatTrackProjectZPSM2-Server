@@ -30,4 +30,9 @@ public class Grade {
     private String note;
     private Long subjectId;
 
+    public Grade(Double gradeValue, String note, Long subjectId) {
+        this.gradeValue = gradeValue;
+        this.note = note;
+        this.subjectId = subjectId;
+    }
 }
